@@ -74,12 +74,14 @@
   }
 
   .nav-logo {
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 900;
-    letter-spacing: 4px;
+    font-style: italic;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ink);
     white-space: nowrap;
+    transform: skew(-8deg);
   }
 
   .nav-links {
@@ -133,13 +135,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 22px 0;
   }
 
   .section-label span {
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-weight: 800;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--mid);
   }
@@ -271,11 +273,13 @@
   }
 
   .marquee-wrap {
-    height: 56px;
+    height: 72px;
     background: var(--ink);
     overflow: hidden;
     display: flex;
     align-items: center;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
 
   .marquee-track {
@@ -286,13 +290,13 @@
   }
 
   .marquee-item {
-    padding: 0 40px;
-    border-right: 1px solid rgba(255,255,255,.12);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 3px;
+    padding: 0 46px;
+    border-right: 1px solid rgba(255,255,255,.16);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(255,255,255,.55);
+    color: #ffffff;
   }
 
   @keyframes marquee {
@@ -312,10 +316,10 @@
   .project-row {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(220px, 300px) minmax(360px, 1fr) minmax(220px, 260px);
+    grid-template-columns: 300px minmax(360px, 1fr) 300px;
     align-items: center;
-    gap: 56px;
-    padding: 56px 0;
+    gap: 42px;
+    padding: 46px 0;
     border-bottom: 1px solid var(--ghost);
     overflow: hidden;
     transition: background .25s;
@@ -325,8 +329,8 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 24px;
-    bottom: 24px;
+    top: 22px;
+    bottom: 22px;
     width: 0;
     background: var(--blue);
     border-radius: 99px;
@@ -362,12 +366,11 @@
   }
 
   .project-name {
-    font-size: clamp(38px, 3.4vw, 52px);
+    font-size: clamp(38px, 3.2vw, 50px);
     font-weight: 900;
     line-height: .98;
     color: var(--ink);
     letter-spacing: -1px;
-    word-break: normal;
   }
 
   .project-tag {
@@ -387,16 +390,16 @@
   }
 
   .project-mid {
-    max-width: 580px;
+    max-width: 560px;
     min-width: 0;
   }
 
   .project-desc {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     font-size: 15px;
     font-weight: 400;
     color: var(--mid);
-    line-height: 1.75;
+    line-height: 1.65;
   }
 
   .project-tech {
@@ -407,30 +410,32 @@
   }
 
   .project-url {
-    justify-self: end;
+    justify-self: start;
+    margin-left: 22px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 220px;
-    height: 62px;
+
+    min-width: 230px;
+    height: 58px;
     padding: 0 28px;
-    border: 1px solid var(--ghost);
+
+    border: 1.5px solid var(--blue);
     border-radius: 999px;
     background: var(--white);
     color: var(--blue);
-    font-size: 16px;
+
+    font-size: 15px;
     font-weight: 900;
     letter-spacing: .1px;
     white-space: nowrap;
+
     transition:
       color .25s ease,
       background .25s ease,
       border-color .25s ease,
       transform .25s ease;
-  }
-
-  .project-row:hover .project-url {
-    border-color: var(--blue);
   }
 
   .project-url:hover {
@@ -441,7 +446,8 @@
   }
 
   .stats-section {
-    padding: 70px 0 70px;
+    padding: 0 0 70px;
+    margin-top: 0;
   }
 
   .stats-grid {
@@ -606,11 +612,13 @@
   .foot-logo {
     display: block;
     margin-bottom: 8px;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 900;
-    letter-spacing: 4px;
+    font-style: italic;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ink);
+    transform: skew(-8deg);
   }
 
   .foot-sub {
@@ -630,7 +638,7 @@
     .project-row {
       grid-template-columns: 1fr;
       gap: 24px;
-      padding: 46px 0;
+      padding: 42px 0;
     }
 
     .project-mid {
@@ -666,6 +674,11 @@
   @media (max-width: 900px) {
     nav {
       padding: 0 24px;
+    }
+
+    .nav-logo {
+      font-size: 17px;
+      letter-spacing: 4px;
     }
 
     .nav-links {
@@ -751,6 +764,16 @@
 
     .btn-primary {
       width: 100%;
+    }
+
+    .marquee-wrap {
+      height: 64px;
+    }
+
+    .marquee-item {
+      padding: 0 32px;
+      font-size: 11px;
+      letter-spacing: 3px;
     }
   }
 </style>
@@ -892,7 +915,7 @@
 
 <section class="stats-section">
   <div class="section-wrap">
-    <hr class="section-divider" style="margin-bottom:60px">
+    <hr class="section-divider" style="margin-bottom:36px">
 
     <div class="stats-grid">
       <div class="stat-item reveal">
@@ -974,7 +997,7 @@
     <span class="foot-sub">Digital Product Studio · Yerevan, Armenia</span>
   </div>
 
-  <span class="foot-copy">© 2025 GOUAVVA</span>
+  <span class="foot-copy">© 2026 GOUAVVA</span>
 </footer>
 
 <script>
