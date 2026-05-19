@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-  /* RESET */
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -38,7 +37,6 @@
     background: var(--white);
     color: var(--ink);
     overflow-x: hidden;
-    cursor: none;
   }
 
   a {
@@ -46,50 +44,9 @@
     text-decoration: none;
   }
 
-  /* CUSTOM CURSOR */
-  .cursor {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: var(--blue);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width .2s, height .2s, background .2s;
-  }
-
-  .cursor-ring {
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 1.5px solid var(--ink);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition:
-      width .35s cubic-bezier(.25,.46,.45,.94),
-      height .35s cubic-bezier(.25,.46,.45,.94),
-      border-color .2s;
-  }
-
-  body.hovering .cursor {
-    width: 6px;
-    height: 6px;
-    background: var(--blue);
-  }
-
-  body.hovering .cursor-ring {
-    width: 56px;
-    height: 56px;
-    border-color: var(--blue);
-  }
-
-  /* REVEAL */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(24px);
     transition:
       opacity .7s cubic-bezier(.25,.46,.45,.94),
       transform .7s cubic-bezier(.25,.46,.45,.94);
@@ -100,22 +57,18 @@
     transform: translateY(0);
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-
     height: 72px;
     padding: 0 64px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    background: rgba(255,255,255,.92);
+    background: rgba(255,255,255,.94);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--ghost);
   }
@@ -126,13 +79,13 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--ink);
+    white-space: nowrap;
   }
 
   .nav-links {
     display: flex;
     gap: 48px;
     list-style: none;
-
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -140,7 +93,7 @@
 
   .nav-links a {
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--mid);
     letter-spacing: 1px;
     transition: color .2s;
@@ -152,7 +105,7 @@
 
   .nav-cta {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--blue);
     letter-spacing: .5px;
     white-space: nowrap;
@@ -163,24 +116,6 @@
     opacity: .7;
   }
 
-  nav::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--blue);
-    transition: width .4s cubic-bezier(.25,.46,.45,.94);
-  }
-
-  nav:hover::after {
-    width: 100%;
-  }
-
-  /* SHARED */
   .container,
   .section-wrap {
     max-width: var(--max);
@@ -203,42 +138,42 @@
 
   .section-label span {
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--mid);
   }
 
-  /* HERO */
   .hero {
-    padding: 180px 0 120px;
+    padding: 165px 0 105px;
   }
 
   .hero-eyebrow {
     display: block;
     margin-bottom: 28px;
-
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--mid);
   }
 
   .hero-h1 {
-    font-size: clamp(54px, 7.2vw, 110px);
+    max-width: 1160px;
+    font-size: clamp(52px, 7vw, 104px);
     font-weight: 900;
-    line-height: 1.04;
+    line-height: .98;
     letter-spacing: -3px;
     color: var(--ink);
   }
 
   .airport-line {
-    margin-top: 10px;
-    min-height: clamp(64px, 7.8vw, 120px);
+    margin-top: 14px;
+    min-height: clamp(56px, 7vw, 104px);
     overflow: hidden;
     display: flex;
     align-items: center;
+    max-width: 1160px;
   }
 
   .airport-text {
@@ -246,36 +181,35 @@
     flex-wrap: wrap;
     align-items: center;
     max-width: 100%;
-
-    font-size: clamp(54px, 7.2vw, 110px);
+    font-size: clamp(52px, 7vw, 104px);
     font-weight: 900;
-    line-height: 1.04;
+    line-height: .98;
     letter-spacing: -3px;
     color: var(--blue);
   }
 
   .flip-char {
     display: inline-block;
-    min-width: .38em;
+    min-width: .34em;
     transform-origin: center center;
-    animation: airportFlip .58s cubic-bezier(.2,.8,.2,1) both;
+    animation: airportFlip .55s cubic-bezier(.2,.8,.2,1) both;
   }
 
   .flip-space {
     display: inline-block;
-    width: .32em;
+    width: .3em;
   }
 
   @keyframes airportFlip {
     0% {
       opacity: 0;
-      transform: rotateX(90deg) translateY(-14px);
-      filter: blur(2px);
+      transform: rotateX(90deg) translateY(-10px);
+      filter: blur(1.5px);
     }
 
     45% {
       opacity: 1;
-      transform: rotateX(-18deg) translateY(2px);
+      transform: rotateX(-14deg) translateY(1px);
       filter: blur(0);
     }
 
@@ -287,10 +221,9 @@
   }
 
   .hero-sub {
-    max-width: 540px;
-    margin: 42px 0 52px;
-
-    font-size: 19px;
+    max-width: 520px;
+    margin: 40px 0 50px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--mid);
     line-height: 1.7;
@@ -306,18 +239,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     height: 56px;
     padding: 0 36px;
-
     background: var(--ink);
     color: var(--white);
     border-radius: 4px;
-
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
-
     transition: background .2s, transform .2s;
   }
 
@@ -328,13 +257,11 @@
 
   .btn-ghost {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--ink);
     letter-spacing: .5px;
-
     border-bottom: 1.5px solid var(--ink);
     padding-bottom: 2px;
-
     transition: color .2s, border-color .2s;
   }
 
@@ -343,12 +270,10 @@
     border-color: var(--blue);
   }
 
-  /* MARQUEE */
   .marquee-wrap {
     height: 56px;
     background: var(--ink);
     overflow: hidden;
-
     display: flex;
     align-items: center;
   }
@@ -363,9 +288,8 @@
   .marquee-item {
     padding: 0 40px;
     border-right: 1px solid rgba(255,255,255,.12);
-
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: rgba(255,255,255,.55);
@@ -381,22 +305,18 @@
     }
   }
 
-  /* WORK */
   .work-section {
     padding-bottom: 0;
   }
 
   .project-row {
     position: relative;
-
     display: grid;
-    grid-template-columns: 320px minmax(320px, 1fr) 260px;
+    grid-template-columns: minmax(220px, 300px) minmax(360px, 1fr) minmax(220px, 260px);
     align-items: center;
-    gap: 48px;
-
-    padding: 52px 0;
+    gap: 56px;
+    padding: 56px 0;
     border-bottom: 1px solid var(--ghost);
-
     overflow: hidden;
     transition: background .25s;
   }
@@ -407,11 +327,9 @@
     left: 0;
     top: 24px;
     bottom: 24px;
-
     width: 0;
     background: var(--blue);
     border-radius: 99px;
-
     transition: width .25s cubic-bezier(.25,.46,.45,.94);
   }
 
@@ -427,7 +345,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-
     padding-left: 18px;
     min-width: 0;
   }
@@ -436,7 +353,7 @@
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 3px;
-    color: var(--ghost);
+    color: #d8d6d2;
     transition: color .25s;
   }
 
@@ -445,36 +362,37 @@
   }
 
   .project-name {
-    font-size: 48px;
+    font-size: clamp(38px, 3.4vw, 52px);
     font-weight: 900;
-    line-height: 1;
+    line-height: .98;
     color: var(--ink);
+    letter-spacing: -1px;
+    word-break: normal;
   }
 
   .project-tag {
     display: inline-flex;
     align-items: center;
-
     width: fit-content;
-    padding: 6px 14px;
-
+    max-width: 100%;
+    padding: 8px 14px;
     background: var(--blue-dim);
     color: var(--blue);
-    border-radius: 3px;
-
+    border-radius: 4px;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .project-mid {
-    max-width: 520px;
+    max-width: 580px;
+    min-width: 0;
   }
 
   .project-desc {
     margin-bottom: 16px;
-
     font-size: 15px;
     font-weight: 400;
     color: var(--mid);
@@ -483,31 +401,27 @@
 
   .project-tech {
     font-size: 11px;
-    font-weight: 600;
-    color: #bbb;
+    font-weight: 700;
+    color: #b7b3ae;
     letter-spacing: .5px;
   }
 
   .project-url {
     justify-self: end;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-width: 220px;
-    height: 64px;
+    height: 62px;
     padding: 0 28px;
-
     border: 1px solid var(--ghost);
     border-radius: 999px;
     background: var(--white);
-    color: var(--ink);
-
-    font-size: 15px;
+    color: var(--blue);
+    font-size: 16px;
     font-weight: 900;
-    letter-spacing: .2px;
-
+    letter-spacing: .1px;
+    white-space: nowrap;
     transition:
       color .25s ease,
       background .25s ease,
@@ -526,9 +440,8 @@
     transform: translateY(-2px);
   }
 
-  /* STATS */
   .stats-section {
-    padding: 80px 0 72px;
+    padding: 70px 0 70px;
   }
 
   .stats-grid {
@@ -553,8 +466,7 @@
   .stat-val {
     display: block;
     margin-bottom: 12px;
-
-    font-size: 60px;
+    font-size: 56px;
     font-weight: 900;
     line-height: 1;
     color: var(--ink);
@@ -562,7 +474,7 @@
 
   .stat-label {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--mid);
     letter-spacing: .5px;
     text-transform: uppercase;
@@ -572,7 +484,6 @@
     display: inline-block;
   }
 
-  /* HOW */
   .how-section {
     padding: 80px 0 96px;
   }
@@ -593,7 +504,6 @@
 
   .how-sub {
     padding-top: 12px;
-
     font-size: 16px;
     font-weight: 400;
     color: var(--mid);
@@ -619,7 +529,6 @@
   .step-num {
     display: block;
     margin-bottom: 12px;
-
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -628,7 +537,6 @@
 
   .step-title {
     margin-bottom: 16px;
-
     font-size: 20px;
     font-weight: 800;
     color: var(--ink);
@@ -641,11 +549,9 @@
     line-height: 1.75;
   }
 
-  /* CTA */
   .cta-strip {
     background: var(--ink);
     padding: 64px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -654,7 +560,6 @@
 
   .cta-h2 {
     margin-bottom: 12px;
-
     font-size: 38px;
     font-weight: 900;
     color: var(--white);
@@ -672,19 +577,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     height: 56px;
     padding: 0 36px;
-
     background: var(--blue);
     color: var(--white);
     border-radius: 4px;
-
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: .5px;
     white-space: nowrap;
-
     transition: transform .2s, opacity .2s;
   }
 
@@ -693,11 +594,9 @@
     opacity: .9;
   }
 
-  /* FOOTER */
   footer {
     border-top: 1px solid var(--ghost);
     padding: 44px 64px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -707,7 +606,6 @@
   .foot-logo {
     display: block;
     margin-bottom: 8px;
-
     font-size: 13px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -728,15 +626,21 @@
     color: #bbb;
   }
 
-  /* RESPONSIVE */
   @media (max-width: 1180px) {
     .project-row {
       grid-template-columns: 1fr;
       gap: 24px;
+      padding: 46px 0;
+    }
+
+    .project-mid {
+      max-width: 760px;
+      padding-left: 18px;
     }
 
     .project-url {
       justify-self: start;
+      margin-left: 18px;
     }
 
     .stats-grid {
@@ -760,15 +664,6 @@
   }
 
   @media (max-width: 900px) {
-    body {
-      cursor: auto;
-    }
-
-    .cursor,
-    .cursor-ring {
-      display: none;
-    }
-
     nav {
       padding: 0 24px;
     }
@@ -783,7 +678,7 @@
     }
 
     .hero {
-      padding: 140px 0 90px;
+      padding: 138px 0 86px;
     }
 
     .hero-h1,
@@ -805,6 +700,7 @@
     .stat-item,
     .stat-item + .stat-item {
       padding: 0 0 28px 0;
+      border-right: none;
       border-bottom: 1px solid var(--ghost);
     }
 
@@ -829,6 +725,7 @@
     .hero-h1,
     .airport-text {
       font-size: clamp(42px, 13vw, 64px);
+      letter-spacing: -1.5px;
     }
 
     .airport-line {
@@ -840,11 +737,16 @@
     }
 
     .project-name {
-      font-size: 42px;
+      font-size: 40px;
+    }
+
+    .project-tag {
+      white-space: normal;
+      line-height: 1.4;
     }
 
     .project-url {
-      min-width: 100%;
+      min-width: calc(100% - 18px);
     }
 
     .btn-primary {
@@ -855,9 +757,6 @@
 </head>
 
 <body>
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <nav>
   <a href="#" class="nav-logo">GOUAVVA</a>
@@ -876,7 +775,7 @@
     <span class="hero-eyebrow reveal">Digital Product Studio</span>
 
     <h1 class="hero-h1 reveal" style="transition-delay:.1s">
-      We make websites
+      We build websites
     </h1>
 
     <div class="airport-line reveal" style="transition-delay:.2s">
@@ -884,7 +783,7 @@
     </div>
 
     <p class="hero-sub reveal" style="transition-delay:.3s">
-      GOUAVVA builds fast, precise digital products for founders who cannot afford to wait — or ship something forgettable.
+      GOUAVVA builds clean, fast websites for brands, founders, and creative teams.
     </p>
 
     <div class="hero-actions reveal" style="transition-delay:.4s">
@@ -940,8 +839,7 @@
 
       <div class="project-mid">
         <p class="project-desc">
-          Real-time seat selection, secure payments, and instant e-ticket delivery.
-          Built to handle thousands of concurrent users on event launch days without breaking a sweat.
+          A ticketing platform with seat selection, secure payments, and instant e-ticket delivery.
         </p>
         <span class="project-tech">React · Node.js · Stripe · PostgreSQL</span>
       </div>
@@ -961,7 +859,6 @@
       <div class="project-mid">
         <p class="project-desc">
           Digital presence for Armenia’s premium natural mineral water brand.
-          Immersive product storytelling, polished interactions, and a refined premium feel.
         </p>
         <span class="project-tech">Next.js · GSAP · Contentful · Vercel</span>
       </div>
@@ -981,7 +878,6 @@
       <div class="project-mid">
         <p class="project-desc">
           Bilingual website for a traditional Armenian dance ensemble.
-          Events, media, and ticketing gathered into one clear cultural platform.
         </p>
         <span class="project-tech">Next.js · Framer Motion · WordPress API</span>
       </div>
@@ -1040,7 +936,7 @@
         <span class="step-num">01</span>
         <h3 class="step-title">Scope in a day</h3>
         <p class="step-body">
-          Send us a brief. We turn it into a precise scope — timeline, deliverables, price — within 24 hours.
+          Send us a brief. We turn it into a precise scope — timeline, deliverables, and price.
         </p>
       </div>
 
@@ -1048,7 +944,7 @@
         <span class="step-num">02</span>
         <h3 class="step-title">Ship in weeks</h3>
         <p class="step-body">
-          Tight, visible sprints. You see real progress every few days — not a big reveal three months later.
+          Tight, visible sprints. You see real progress every few days.
         </p>
       </div>
 
@@ -1056,7 +952,7 @@
         <span class="step-num">03</span>
         <h3 class="step-title">Code you own</h3>
         <p class="step-body">
-          Clean architecture, full documentation, zero vendor lock-in. Any competent developer can continue the work.
+          Clean architecture, clear handoff, and no unnecessary lock-in.
         </p>
       </div>
     </div>
@@ -1082,54 +978,6 @@
 </footer>
 
 <script>
-  /* CUSTOM CURSOR */
-  const cursor = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursorRing');
-
-  const finePointer = window.matchMedia('(pointer:fine)').matches;
-
-  if (!finePointer || window.innerWidth <= 900) {
-    if (cursor) cursor.style.display = 'none';
-    if (cursorRing) cursorRing.style.display = 'none';
-    document.body.style.cursor = 'auto';
-  } else {
-    let mx = -100;
-    let my = -100;
-    let rx = -100;
-    let ry = -100;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-
-      cursorRing.style.left = rx + 'px';
-      cursorRing.style.top = ry + 'px';
-
-      requestAnimationFrame(animateRing);
-    }
-
-    animateRing();
-
-    document.querySelectorAll('a, button, .project-row').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        document.body.classList.add('hovering');
-      });
-
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('hovering');
-      });
-    });
-  }
-
-  /* REVEAL */
   const revealEls = document.querySelectorAll('.reveal');
 
   const observer = new IntersectionObserver(entries => {
@@ -1149,7 +997,6 @@
     });
   }, 80);
 
-  /* COUNTERS */
   const counters = document.querySelectorAll('.count-up');
 
   const countObserver = new IntersectionObserver(entries => {
@@ -1179,7 +1026,6 @@
 
   counters.forEach(counter => countObserver.observe(counter));
 
-  /* NAV SHADOW */
   const nav = document.querySelector('nav');
 
   window.addEventListener('scroll', () => {
@@ -1188,12 +1034,11 @@
       : 'none';
   });
 
-  /* AIRPORT STYLE HERO TEXT */
   const airportPhrases = [
-    'people want to use.',
-    'brands want to show.',
-    'founders want to launch.',
-    'teams want to scale.'
+    'that launch fast.',
+    'that feel sharp.',
+    'that sell clearly.',
+    'that scale cleanly.'
   ];
 
   const airportText = document.getElementById('airportText');
