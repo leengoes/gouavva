@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- GOUAVVA INDEX — v2026-05-20-CONTACT-CURSOR-FIX -->
+<!-- GOUAVVA INDEX — v2026-05-20-CLEAN-LINES-FINAL -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -1509,6 +1509,89 @@
     }
   }
 
+
+  /* CLEAN LINE UPDATE — reduce boxed feeling */
+  .section-divider {
+    border-top-color: rgba(13, 13, 13, .08);
+  }
+
+  .project-row {
+    border-bottom-color: rgba(13, 13, 13, .08);
+  }
+
+  .project-row:last-child {
+    border-bottom: 0;
+  }
+
+  .beyond-section .section-divider {
+    display: none;
+  }
+
+  .beyond-card {
+    border-color: rgba(13, 13, 13, .08);
+    box-shadow: none;
+  }
+
+  .beyond-card:hover {
+    border-color: rgba(20, 105, 250, .42);
+    box-shadow: 0 18px 48px rgba(20, 105, 250, .07);
+  }
+
+  .standards-stage,
+  .standards-panel {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    padding-top: 58px;
+    padding-bottom: 54px;
+  }
+
+  .standard-card {
+    border: 0 !important;
+    border-left: 3px solid rgba(20, 105, 250, .22) !important;
+    background: linear-gradient(90deg, rgba(20,105,250,.07), rgba(255,255,255,0) 58%);
+    box-shadow: none;
+  }
+
+  .standard-card:hover {
+    border-left-color: var(--blue) !important;
+    box-shadow: 0 18px 48px rgba(20, 105, 250, .08);
+  }
+
+  .stats-section {
+    padding-top: 8px;
+  }
+
+  .stats-section .section-divider:first-child {
+    display: none;
+  }
+
+  .stats-section .section-divider:last-child {
+    opacity: .55;
+  }
+
+  .stat-item {
+    border-right-color: rgba(13, 13, 13, .08);
+  }
+
+  .step {
+    border-top-color: rgba(13, 13, 13, .08);
+  }
+
+  @media (max-width: 900px) {
+    .project-row {
+      border-bottom-color: rgba(13, 13, 13, .08);
+    }
+
+    .standard-card {
+      border-left: 3px solid rgba(20,105,250,.22) !important;
+      padding-left: 88px;
+    }
+
+    .stat-item {
+      border-bottom-color: rgba(13, 13, 13, .08);
+    }
+  }
+
 </style>
 </head>
 
@@ -1536,7 +1619,7 @@
   <div class="container">
     <span class="hero-eyebrow reveal">Digital Product Studio</span>
 
-    <h1 class="hero-title reveal" style="transition-delay:.08s">We build websites that</h1>
+    <h1 class="hero-title reveal" style="transition-delay:.08s">We build websites</h1>
 
     <div class="hero-dynamic reveal" style="transition-delay:.16s">
       <div class="airport-text" id="airportText"></div>
@@ -1883,12 +1966,12 @@
   }, 80);
 
   const phrases = [
-    'launch fast.',
-    'sell clearly.',
-    'scale cleanly.',
-    'feel sharp.',
-    'SEO-ready.',
-    'mobile-first.'
+    'that launch fast.',
+    'that sell clearly.',
+    'that scale cleanly.',
+    'that feel sharp.',
+    'that are SEO-ready.',
+    'that work mobile-first.'
   ];
 
   const airportText = document.getElementById('airportText');
