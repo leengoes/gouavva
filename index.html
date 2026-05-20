@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- GOUAVVA INDEX — v2026-05-20-FINAL-DESIGN-CHECKED -->
+<!-- GOUAVVA INDEX — v2026-05-20-ANIMATED-ICONS-CONTACT -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -72,44 +72,38 @@
 
   /* CURSOR EFFECT */
 
- /* CURSOR EFFECT — black ring + blue dot */
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    left: -100px;
+    top: -100px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
 
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  left: -100px;
-  top: -100px;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
+  .cursor-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--blue);
+  }
 
-.cursor-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--blue);
-}
+  .cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    mix-blend-mode: difference;
+    transition: width .25s ease, height .25s ease, border-color .25s ease, background .25s ease;
+  }
 
-.cursor-ring {
-  width: 54px;
-  height: 54px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: transparent;
-  transition:
-    width .22s ease,
-    height .22s ease,
-    border-color .22s ease,
-    background .22s ease;
-}
-
-body.cursor-hover .cursor-ring {
-  width: 70px;
-  height: 70px;
-  border-color: var(--ink);
-  background: rgba(0, 0, 0, .035);
-}
+  body.cursor-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    border-color: var(--blue);
+    background: rgba(20, 105, 250, .08);
+  }
 
   /* NAV */
 
@@ -1226,6 +1220,286 @@ body.cursor-hover .cursor-ring {
       font-size: 50px;
     }
   }
+
+
+  /* CONTACT + ANIMATED ICON UPDATE */
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .nav-email-pill {
+    height: 40px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(20,105,250,.06);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    transition: transform .22s ease, color .22s ease, border-color .22s ease, background .22s ease;
+  }
+
+  .nav-email-pill:hover {
+    color: var(--blue);
+    border-color: rgba(20,105,250,.42);
+    background: rgba(20,105,250,.11);
+    transform: translateY(-1px);
+  }
+
+  .animated-icon {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 16px 38px rgba(20,105,250,.18);
+    overflow: visible;
+    animation: iconFloat 3.6s ease-in-out infinite;
+  }
+
+  .animated-icon::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1.5px solid rgba(20,105,250,.28);
+    border-radius: 50%;
+    transform: scale(.86);
+    opacity: .65;
+    animation: iconRing 2.8s ease-in-out infinite;
+  }
+
+  .animated-icon svg {
+    position: relative;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+  }
+
+  .beyond-card:nth-child(2) .animated-icon,
+  .standard-card:nth-child(2) .animated-icon {
+    animation-delay: .35s;
+  }
+
+  .beyond-card:nth-child(3) .animated-icon,
+  .standard-card:nth-child(3) .animated-icon {
+    animation-delay: .7s;
+  }
+
+  .beyond-icon {
+    margin-bottom: 30px;
+  }
+
+  .standard-card::before {
+    display: none;
+  }
+
+  .standard-card {
+    padding-left: 108px;
+  }
+
+  .standard-icon {
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 0;
+  }
+
+  .standard-card h3,
+  .standard-card p {
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon-pulse-dot {
+    animation: dotPulse 1.55s ease-in-out infinite;
+  }
+
+  .icon-pulse-dot.delay {
+    animation-delay: .35s;
+  }
+
+  .icon-spark {
+    transform-origin: center;
+    animation: sparkle 1.7s ease-in-out infinite;
+  }
+
+  .icon-rotate {
+    transform-origin: center;
+    animation: softSpin 6s linear infinite;
+  }
+
+  .icon-sweep-line {
+    stroke-dasharray: 8;
+    stroke-dashoffset: 8;
+    animation: iconDash 2.1s ease-in-out infinite;
+  }
+
+  .beyond-card:hover .animated-icon,
+  .standard-card:hover .animated-icon {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  @keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @keyframes iconRing {
+    0%, 100% { transform: scale(.86); opacity: .45; }
+    50% { transform: scale(1.14); opacity: .95; }
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: .45; transform: scale(.82); }
+    50% { opacity: 1; transform: scale(1.18); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: .55; transform: scale(.75) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.1) rotate(12deg); }
+  }
+
+  @keyframes softSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes iconDash {
+    0% { stroke-dashoffset: 8; opacity: .45; }
+    45% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -8; opacity: .45; }
+  }
+
+  footer {
+    padding: 52px 64px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr auto;
+    align-items: start;
+    gap: 36px;
+    background: var(--white);
+  }
+
+  .foot-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .foot-logo {
+    margin-bottom: 0;
+  }
+
+  .foot-contacts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .foot-contact-card {
+    min-height: 86px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+
+  .foot-contact-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(20,105,250,.35);
+    box-shadow: 0 12px 32px rgba(10,18,40,.06);
+  }
+
+  .foot-contact-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .foot-contact-value {
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.45;
+    word-break: break-word;
+  }
+
+  .foot-contact-card:hover .foot-contact-value {
+    color: var(--blue);
+  }
+
+  .foot-copy-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .nav-right {
+      gap: 10px;
+    }
+
+    .nav-email-pill {
+      display: none;
+    }
+
+    .animated-icon {
+      width: 54px;
+      height: 54px;
+    }
+
+    .standard-card {
+      padding: 28px 26px 28px 92px;
+    }
+
+    .standard-icon {
+      left: 26px;
+      top: 28px;
+      width: 50px;
+      height: 50px;
+    }
+
+    footer {
+      padding: 52px 30px;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .foot-contacts {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .foot-copy-wrap {
+      justify-content: flex-start;
+    }
+  }
+
 </style>
 </head>
 
@@ -1243,7 +1517,10 @@ body.cursor-hover .cursor-ring {
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <a href="#contact" class="nav-cta">Start a project →</a>
+  <div class="nav-right">
+    <a href="mailto:hello@joor.am" class="nav-email-pill">hello@joor.am</a>
+    <a href="#contact" class="nav-cta">Start a project →</a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -1375,19 +1652,39 @@ body.cursor-hover .cursor-ring {
 
       <div class="beyond-grid">
         <div class="beyond-card reveal">
-          <span class="beyond-icon">01</span>
+          <span class="animated-icon beyond-icon icon-bot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="5" y="8" width="14" height="10" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 8V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle class="icon-pulse-dot" cx="9" cy="13" r="1.2" fill="currentColor"/>
+              <circle class="icon-pulse-dot delay" cx="15" cy="13" r="1.2" fill="currentColor"/>
+              <path d="M9 18v2M15 18v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
           <h3>Telegram bots</h3>
           <p>Ordering flows, booking systems, support bots, notifications, and community tools.</p>
         </div>
 
         <div class="beyond-card reveal" style="transition-delay:.08s">
-          <span class="beyond-icon">02</span>
+          <span class="animated-icon beyond-icon icon-chat" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 6.5h14v9H10l-4.5 3v-3H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path class="icon-spark" d="M14.5 8.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4Z" fill="currentColor"/>
+              <path d="M7.5 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
           <h3>AI chatbots</h3>
           <p>Custom assistants for customer support, lead capture, FAQs, and product guidance.</p>
         </div>
 
         <div class="beyond-card reveal" style="transition-delay:.16s">
-          <span class="beyond-icon">03</span>
+          <span class="animated-icon beyond-icon icon-auto" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path class="icon-rotate" d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M17.7 6.3l-2.1 2.1M8.4 15.6l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="1.3" fill="currentColor"/>
+            </svg>
+          </span>
           <h3>Automation tools</h3>
           <p>Small systems that connect forms, messages, databases, payments, and daily workflows.</p>
         </div>
@@ -1411,16 +1708,38 @@ body.cursor-hover .cursor-ring {
 
         <div class="standards-list">
           <div class="standard-card reveal" data-num="01">
+            <span class="animated-icon standard-icon icon-mobile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="7" y="3" width="10" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path class="icon-sweep-line" d="M9.5 7h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="17" r="1" fill="currentColor"/>
+              </svg>
+            </span>
             <h3>Mobile-first delivery</h3>
             <p>We design and test for mobile from the beginning, so the site feels sharp where people actually open it.</p>
           </div>
 
           <div class="standard-card reveal" data-num="02" style="transition-delay:.08s">
+            <span class="animated-icon standard-icon icon-target" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle class="icon-pulse-dot" cx="12" cy="12" r="1.6" fill="currentColor"/>
+                <path d="M17 7l3-3M18.5 4H21v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
             <h3>Perfect SEO targets</h3>
             <p>Clean headings, metadata, fast structure, readable content, and technical setup aimed at top SEO scores.</p>
           </div>
 
           <div class="standard-card reveal" data-num="03" style="transition-delay:.16s">
+            <span class="animated-icon standard-icon icon-support" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4a8 8 0 1 0 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path class="icon-spark" d="M16 3.5l.7 1.7 1.8.8-1.8.7-.7 1.8-.8-1.8-1.7-.7 1.7-.8.8-1.7Z" fill="currentColor"/>
+                <path d="M8.5 12.5l2.2 2.2 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
             <h3>Future support</h3>
             <p>After launch, we can guide next steps, improve the product, or help another developer continue cleanly.</p>
           </div>
@@ -1510,12 +1829,31 @@ body.cursor-hover .cursor-ring {
 </div>
 
 <footer>
-  <div>
+  <div class="foot-brand">
     <span class="foot-logo">GOUAVVA</span>
     <span class="foot-sub">Digital Product Studio · Yerevan, Armenia</span>
   </div>
 
-  <span class="foot-copy">© 2026 GOUAVVA</span>
+  <div class="foot-contacts">
+    <a href="mailto:hello@joor.am" class="foot-contact-card">
+      <span class="foot-contact-label">Email</span>
+      <span class="foot-contact-value">hello@joor.am</span>
+    </a>
+
+    <a href="https://www.linkedin.com/company/gouavva" target="_blank" rel="noreferrer" class="foot-contact-card">
+      <span class="foot-contact-label">LinkedIn</span>
+      <span class="foot-contact-value">linkedin.com/gouavva</span>
+    </a>
+
+    <a href="tel:+37496953322" class="foot-contact-card">
+      <span class="foot-contact-label">Phone</span>
+      <span class="foot-contact-value">+374 96 953322</span>
+    </a>
+  </div>
+
+  <div class="foot-copy-wrap">
+    <span class="foot-copy">© 2026 GOUAVVA</span>
+  </div>
 </footer>
 
 <script>
