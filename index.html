@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- GOUAVVA INDEX — v2026-05-20-ANIMATED-ICONS-CONTACT -->
+<!-- GOUAVVA INDEX — v2026-05-20-CONTACT-CURSOR-FIX -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -70,45 +70,45 @@
     transform: translateY(0);
   }
 
-  /* CURSOR EFFECT */
-/* CURSOR EFFECT — black ring + blue dot */
+  /* CURSOR EFFECT — black ring + blue dot */
 
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  left: -100px;
-  top: -100px;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    left: -100px;
+    top: -100px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
 
-.cursor-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--blue);
-}
+  .cursor-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--blue);
+  }
 
-.cursor-ring {
-  width: 54px;
-  height: 54px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: transparent;
-  transition:
-    width .22s ease,
-    height .22s ease,
-    border-color .22s ease,
-    background .22s ease;
-}
+  .cursor-ring {
+    width: 54px;
+    height: 54px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    transition:
+      width .22s ease,
+      height .22s ease,
+      border-color .22s ease,
+      background .22s ease;
+  }
 
-body.cursor-hover .cursor-ring {
-  width: 70px;
-  height: 70px;
-  border-color: var(--ink);
-  background: rgba(0, 0, 0, .035);
-}
+  body.cursor-hover .cursor-ring {
+    width: 70px;
+    height: 70px;
+    border-color: var(--ink);
+    background: rgba(0, 0, 0, .035);
+  }
+
   /* NAV */
 
   nav {
@@ -924,6 +924,11 @@ body.cursor-hover .cursor-ring {
     font-weight: 500;
   }
 
+  .foot-sub {
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
+
   /* RESPONSIVE */
 
   @media (max-width: 1180px) {
@@ -1522,7 +1527,7 @@ body.cursor-hover .cursor-ring {
   </ul>
 
   <div class="nav-right">
-    <a href="mailto:hello@joor.am" class="nav-email-pill">hello@joor.am</a>
+    <a href="mailto:hello@gouavva.com" class="nav-email-pill">hello@gouavva.com</a>
     <a href="#contact" class="nav-cta">Start a project →</a>
   </div>
 </nav>
@@ -1538,7 +1543,7 @@ body.cursor-hover .cursor-ring {
     </div>
 
     <p class="hero-sub reveal" style="transition-delay:.24s">
-      GOUAVVA builds clean, fast websites for brands, founders, and creative teams.
+      GOUAVVA is a digital product studio from Yerevan, Armenia building clean, fast websites for brands, founders, and creative teams.
     </p>
 
     <div class="hero-actions reveal" style="transition-delay:.32s">
@@ -1835,13 +1840,13 @@ body.cursor-hover .cursor-ring {
 <footer>
   <div class="foot-brand">
     <span class="foot-logo">GOUAVVA</span>
-    <span class="foot-sub">Digital Product Studio · Yerevan, Armenia</span>
+    <span class="foot-sub">Digital Product Studio from Yerevan, Armenia</span>
   </div>
 
   <div class="foot-contacts">
-    <a href="mailto:hello@joor.am" class="foot-contact-card">
+    <a href="mailto:hello@gouavva.com" class="foot-contact-card">
       <span class="foot-contact-label">Email</span>
-      <span class="foot-contact-value">hello@joor.am</span>
+      <span class="foot-contact-value">hello@gouavva.com</span>
     </a>
 
     <a href="https://www.linkedin.com/company/gouavva" target="_blank" rel="noreferrer" class="foot-contact-card">
