@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- GOUAVVA INDEX — MOBILE + SPACING FIX v2026-05-20 -->
+<!-- GOUAVVA INDEX — v2026-05-20-CLEAN-MOBILE-GAP-FIX -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -112,7 +112,7 @@
   /* HERO */
 
   .hero {
-    padding: 154px 0 20px;
+    padding: 154px 0 0;
   }
 
   .hero-eyebrow {
@@ -167,10 +167,12 @@
       opacity: 0;
       transform: rotateX(90deg) translateY(-8px);
     }
+
     55% {
       opacity: 1;
       transform: rotateX(-12deg);
     }
+
     100% {
       opacity: 1;
       transform: rotateX(0);
@@ -190,6 +192,7 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    padding-bottom: 54px;
   }
 
   .btn-primary {
@@ -259,14 +262,14 @@
   /* WORK */
 
   .work-section {
-    padding-top: 34px;
+    padding-top: 0;
   }
 
   .section-label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 34px 0 38px;
+    padding: 32px 0 38px;
   }
 
   .section-label span {
@@ -481,22 +484,22 @@
   }
 
   .standards-inner {
-    padding: 72px 0;
+    padding: 78px 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     display: grid;
     grid-template-columns: .9fr 1.4fr;
-    gap: 72px;
+    gap: 82px;
   }
 
   .standards-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 22px;
   }
 
   .standard-card {
-    padding: 28px 26px;
+    padding: 32px 28px;
     background: var(--light);
     border: 1px solid var(--line);
   }
@@ -599,11 +602,11 @@
   .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    gap: 64px;
   }
 
   .step {
-    padding: 40px 36px 40px 0;
+    padding: 44px 18px 44px 0;
     border-top: 2px solid var(--line);
     transition: .25s ease;
   }
@@ -615,7 +618,7 @@
 
   .step-num {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -623,10 +626,12 @@
   }
 
   .step-title {
-    margin-bottom: 16px;
-    font-size: 22px;
+    margin-bottom: 18px;
+    font-size: 21px;
     font-weight: 900;
     letter-spacing: -.5px;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .step-body {
@@ -732,6 +737,10 @@
       min-height: auto;
     }
 
+    .step-title {
+      white-space: normal;
+    }
+
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
       padding: 30px 0;
@@ -745,7 +754,7 @@
   @media (max-width: 900px) {
     nav {
       height: 76px;
-      padding: 0 24px;
+      padding: 0 26px;
     }
 
     .nav-links {
@@ -763,11 +772,11 @@
 
     .container,
     .section-wrap {
-      padding: 0 26px;
+      padding: 0 28px;
     }
 
     .hero {
-      padding: 142px 0 8px;
+      padding: 122px 0 0;
     }
 
     .hero-eyebrow {
@@ -777,21 +786,21 @@
     }
 
     .hero-title {
-      font-size: clamp(46px, 12vw, 58px);
-      line-height: 1.02;
-      letter-spacing: -2px;
+      font-size: clamp(42px, 11.4vw, 54px);
+      line-height: 1.03;
+      letter-spacing: -1.8px;
     }
 
     .airport-text {
       flex-wrap: nowrap;
       white-space: nowrap;
-      font-size: clamp(40px, 10.5vw, 48px);
+      font-size: clamp(38px, 10vw, 46px);
       line-height: 1.06;
-      letter-spacing: -1.8px;
+      letter-spacing: -1.4px;
     }
 
     .hero-dynamic {
-      min-height: 56px;
+      min-height: 52px;
       margin-top: 16px;
       align-items: center;
       overflow: hidden;
@@ -803,14 +812,16 @@
 
     .hero-sub {
       margin: 34px 0 38px;
-      font-size: 18px;
-      line-height: 1.78;
+      max-width: 100%;
+      font-size: 17px;
+      line-height: 1.76;
     }
 
     .hero-actions {
       flex-direction: column;
       align-items: stretch;
       gap: 26px;
+      padding-bottom: 44px;
     }
 
     .btn-primary {
@@ -823,47 +834,59 @@
     }
 
     .marquee-wrap {
-      margin-top: 18px;
-      height: 82px;
+      margin-top: 0;
+      height: 78px;
     }
 
     .marquee-item {
-      padding: 0 56px;
+      padding: 0 52px;
       font-size: 12px;
       letter-spacing: 4px;
     }
 
     .work-section {
-      padding-top: 36px;
+      padding-top: 0;
     }
 
     .section-label {
-      padding: 32px 0 34px;
+      padding: 30px 0 34px;
+      gap: 24px;
+    }
+
+    .section-label span {
+      letter-spacing: 3px;
     }
 
     .project-row {
+      grid-template-columns: 1fr;
       padding: 48px 0;
       gap: 28px;
     }
 
+    .project-row::before {
+      display: none;
+    }
+
     .project-left,
-    .project-mid,
-    .project-url {
-      padding-left: 18px;
+    .project-mid {
+      padding-left: 0;
       margin-left: 0;
     }
 
+    .project-url {
+      margin-left: 0;
+      padding-left: 28px;
+      padding-right: 28px;
+      width: 100%;
+    }
+
     .project-name {
-      font-size: 42px;
+      font-size: 40px;
     }
 
     .project-desc {
       font-size: 17px;
       line-height: 1.72;
-    }
-
-    .project-url {
-      width: calc(100% - 18px);
     }
 
     .beyond-section {
@@ -877,19 +900,19 @@
 
     .beyond-title,
     .standards-title {
-      font-size: clamp(40px, 10vw, 56px);
-      letter-spacing: -1.7px;
-    }
-
-    .beyond-card,
-    .standard-card {
-      padding: 32px 26px;
+      font-size: clamp(38px, 10vw, 54px);
+      letter-spacing: -1.5px;
     }
 
     .beyond-grid,
     .standards-list,
     .steps-grid {
-      gap: 22px;
+      gap: 28px;
+    }
+
+    .beyond-card,
+    .standard-card {
+      padding: 34px 28px;
     }
 
     .standards-section {
@@ -898,7 +921,12 @@
 
     .standards-inner {
       padding: 64px 0;
-      gap: 46px;
+      gap: 48px;
+    }
+
+    .standard-card p,
+    .beyond-card p {
+      font-size: 15.5px;
     }
 
     .stats-grid {
@@ -923,31 +951,46 @@
       margin-bottom: 62px;
     }
 
+    .steps-grid {
+      gap: 34px;
+    }
+
     .step {
-      padding: 42px 0;
+      padding: 42px 12px 42px 0;
+    }
+
+    .step-title {
+      white-space: normal;
+      font-size: 22px;
     }
 
     .cta-strip,
     footer {
-      padding: 52px 26px;
+      padding: 52px 28px;
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
   @media (max-width: 560px) {
-    .hero-title {
-      font-size: clamp(44px, 12.4vw, 54px);
-      letter-spacing: -1.8px;
+    .container,
+    .section-wrap {
+      padding-left: 28px;
+      padding-right: 28px;
     }
 
-    .airport-text {
-      font-size: clamp(38px, 10.6vw, 46px);
+    .hero-title {
+      font-size: clamp(40px, 11.6vw, 52px);
       letter-spacing: -1.6px;
     }
 
+    .airport-text {
+      font-size: clamp(34px, 9.6vw, 42px);
+      letter-spacing: -1.1px;
+    }
+
     .hero-dynamic {
-      min-height: 52px;
+      min-height: 48px;
     }
 
     .hero-sub {
@@ -955,13 +998,12 @@
     }
 
     .project-name {
-      font-size: 40px;
+      font-size: 39px;
     }
 
-    .section-wrap,
-    .container {
-      padding-left: 26px;
-      padding-right: 26px;
+    .beyond-title,
+    .standards-title {
+      font-size: clamp(36px, 10vw, 48px);
     }
   }
 </style>
@@ -1140,10 +1182,10 @@
     <div class="standards-inner">
       <div>
         <span class="standards-label">Delivery standards</span>
-        <h2 class="standards-title">Built for launch, not just for looks.</h2>
+        <h2 class="standards-title">Mobile-first. SEO-ready. Easy to continue.</h2>
         <p class="standards-text">
-          Every project is shaped for real-world use: mobile-first layouts, clean SEO foundations,
-          and a handoff that makes future development easier.
+          Every project is shaped for real-world use: mobile-first layouts, strong SEO foundations,
+          and a clean handoff that makes future development easier.
         </p>
       </div>
 
@@ -1156,14 +1198,14 @@
 
         <div class="standard-card">
           <span class="standard-number">02</span>
-          <h3>SEO-ready structure</h3>
-          <p>Clean headings, fast pages, readable content, metadata basics, and technical structure ready for growth.</p>
+          <h3>Perfect SEO targets</h3>
+          <p>Clean headings, metadata, fast structure, readable content, and technical setup aimed at top SEO scores.</p>
         </div>
 
         <div class="standard-card">
           <span class="standard-number">03</span>
-          <h3>Further development support</h3>
-          <p>After launch, we can guide your next steps, improve the product, or help another developer continue cleanly.</p>
+          <h3>Future support</h3>
+          <p>After launch, we can guide next steps, improve the product, or help another developer continue cleanly.</p>
         </div>
       </div>
     </div>
@@ -1233,7 +1275,7 @@
 
       <div class="step">
         <span class="step-num">03</span>
-        <h3 class="step-title">Founder energy, clean execution</h3>
+        <h3 class="step-title">Founder energy</h3>
         <p class="step-body">
           GOUAVVA is a young, ambitious technical team with high standards.
           We move quickly, care about details, and build like the project matters.
@@ -1270,9 +1312,9 @@
   ];
 
   const mobilePhrases = [
+    'mobile-first.',
+    'SEO-ready.',
     'launch fast.',
-    'sell clearly.',
-    'scale cleanly.',
     'feel sharp.'
   ];
 
