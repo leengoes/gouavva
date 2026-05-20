@@ -71,44 +71,44 @@
   }
 
   /* CURSOR EFFECT — black ring + blue dot */
+/* CURSOR EFFECT — black ring + blue dot */
 
-  .cursor-dot,
-  .cursor-ring {
-    position: fixed;
-    left: -100px;
-    top: -100px;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
 
-  .cursor-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: var(--blue);
-  }
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--blue);
+}
 
-  .cursor-ring {
-    width: 54px;
-    height: 54px;
-    border: 2px solid var(--ink);
-    border-radius: 999px;
-    background: transparent;
-    transition:
-      width .22s ease,
-      height .22s ease,
-      border-color .22s ease,
-      background .22s ease;
-  }
+.cursor-ring {
+  width: 54px;
+  height: 54px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  transition:
+    width .22s ease,
+    height .22s ease,
+    border-color .22s ease,
+    background .22s ease;
+}
 
-  body.cursor-hover .cursor-ring {
-    width: 70px;
-    height: 70px;
-    border-color: var(--ink);
-    background: rgba(0, 0, 0, .035);
-  }
-
+body.cursor-hover .cursor-ring {
+  width: 70px;
+  height: 70px;
+  border-color: var(--ink);
+  background: rgba(0, 0, 0, .035);
+}
   /* NAV */
 
   nav {
