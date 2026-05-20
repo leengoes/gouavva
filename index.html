@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- GOUAVVA INDEX — MOBILE + SPACING FIX v2026-05-20 -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -22,8 +23,8 @@
     --blue: #1469fa;
     --blue-soft: #eaf1ff;
     --line: #e7e4df;
-    --text: #5f5b56;
-    --muted: #817b75;
+    --text: #5a5651;
+    --muted: #7c766f;
     --light: #f8f7f4;
     --font: 'Montserrat', Arial, sans-serif;
     --max: 1440px;
@@ -68,7 +69,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255,255,255,.96);
+    background: rgba(255,255,255,.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
   }
@@ -111,7 +112,7 @@
   /* HERO */
 
   .hero {
-    padding: 154px 0 34px;
+    padding: 154px 0 20px;
   }
 
   .hero-eyebrow {
@@ -178,7 +179,7 @@
 
   .hero-sub {
     max-width: 560px;
-    margin: 40px 0 42px;
+    margin: 40px 0 40px;
     font-size: 19px;
     font-weight: 500;
     line-height: 1.7;
@@ -227,7 +228,7 @@
 
   .marquee-wrap {
     height: 88px;
-    margin-top: 18px;
+    margin-top: 0;
     background: #070707;
     overflow: hidden;
     display: flex;
@@ -241,7 +242,7 @@
   }
 
   .marquee-item {
-    padding: 0 64px;
+    padding: 0 72px;
     border-right: 1px solid rgba(255,255,255,.22);
     color: #fff;
     font-size: 13px;
@@ -257,11 +258,15 @@
 
   /* WORK */
 
+  .work-section {
+    padding-top: 34px;
+  }
+
   .section-label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 0 34px;
+    padding: 34px 0 38px;
   }
 
   .section-label span {
@@ -762,7 +767,7 @@
     }
 
     .hero {
-      padding: 128px 0 38px;
+      padding: 142px 0 8px;
     }
 
     .hero-eyebrow {
@@ -771,20 +776,25 @@
       letter-spacing: 3px;
     }
 
-    .hero-title,
-    .airport-text {
-      font-size: clamp(48px, 13vw, 70px);
+    .hero-title {
+      font-size: clamp(46px, 12vw, 58px);
       line-height: 1.02;
-      letter-spacing: -2.2px;
+      letter-spacing: -2px;
+    }
+
+    .airport-text {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      font-size: clamp(40px, 10.5vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -1.8px;
     }
 
     .hero-dynamic {
-      min-height: 148px;
-      align-items: flex-start;
-    }
-
-    .airport-text {
-      max-width: 100%;
+      min-height: 56px;
+      margin-top: 16px;
+      align-items: center;
+      overflow: hidden;
     }
 
     .flip-char {
@@ -813,18 +823,22 @@
     }
 
     .marquee-wrap {
-      margin-top: 28px;
+      margin-top: 18px;
       height: 82px;
     }
 
     .marquee-item {
-      padding: 0 46px;
+      padding: 0 56px;
       font-size: 12px;
       letter-spacing: 4px;
     }
 
+    .work-section {
+      padding-top: 36px;
+    }
+
     .section-label {
-      padding: 26px 0 28px;
+      padding: 32px 0 34px;
     }
 
     .project-row {
@@ -853,31 +867,38 @@
     }
 
     .beyond-section {
-      padding: 62px 0 68px;
+      padding: 68px 0 76px;
     }
 
     .beyond-inner {
-      padding-top: 54px;
-      gap: 44px;
+      padding-top: 58px;
+      gap: 48px;
     }
 
     .beyond-title,
     .standards-title {
-      font-size: clamp(42px, 10vw, 58px);
+      font-size: clamp(40px, 10vw, 56px);
+      letter-spacing: -1.7px;
     }
 
     .beyond-card,
     .standard-card {
-      padding: 30px 24px;
+      padding: 32px 26px;
+    }
+
+    .beyond-grid,
+    .standards-list,
+    .steps-grid {
+      gap: 22px;
     }
 
     .standards-section {
-      padding-bottom: 68px;
+      padding-bottom: 72px;
     }
 
     .standards-inner {
-      padding: 58px 0;
-      gap: 42px;
+      padding: 64px 0;
+      gap: 46px;
     }
 
     .stats-grid {
@@ -894,35 +915,39 @@
     }
 
     .how-section {
-      padding: 68px 0 92px;
+      padding: 76px 0 96px;
     }
 
     .how-header {
-      gap: 34px;
-      margin-bottom: 56px;
+      gap: 38px;
+      margin-bottom: 62px;
     }
 
     .step {
-      padding-right: 0;
+      padding: 42px 0;
     }
 
     .cta-strip,
     footer {
-      padding: 48px 26px;
+      padding: 52px 26px;
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
   @media (max-width: 560px) {
-    .hero-title,
-    .airport-text {
-      font-size: clamp(45px, 12vw, 58px);
+    .hero-title {
+      font-size: clamp(44px, 12.4vw, 54px);
       letter-spacing: -1.8px;
     }
 
+    .airport-text {
+      font-size: clamp(38px, 10.6vw, 46px);
+      letter-spacing: -1.6px;
+    }
+
     .hero-dynamic {
-      min-height: 126px;
+      min-height: 52px;
     }
 
     .hero-sub {
@@ -931,6 +956,12 @@
 
     .project-name {
       font-size: 40px;
+    }
+
+    .section-wrap,
+    .container {
+      padding-left: 26px;
+      padding-right: 26px;
     }
   }
 </style>
@@ -1231,15 +1262,26 @@
 </footer>
 
 <script>
-  const phrases = [
+  const desktopPhrases = [
     'that launch fast.',
     'that sell clearly.',
     'that scale cleanly.',
     'that feel sharp.'
   ];
 
+  const mobilePhrases = [
+    'launch fast.',
+    'sell clearly.',
+    'scale cleanly.',
+    'feel sharp.'
+  ];
+
   const target = document.getElementById('airportText');
   let phraseIndex = 0;
+
+  function getPhrases() {
+    return window.innerWidth <= 900 ? mobilePhrases : desktopPhrases;
+  }
 
   function renderPhrase(text) {
     target.innerHTML = '';
@@ -1260,12 +1302,21 @@
     });
   }
 
-  renderPhrase(phrases[phraseIndex]);
+  function updatePhrase() {
+    const phrases = getPhrases();
+    phraseIndex = phraseIndex % phrases.length;
+    renderPhrase(phrases[phraseIndex]);
+  }
+
+  updatePhrase();
 
   setInterval(() => {
+    const phrases = getPhrases();
     phraseIndex = (phraseIndex + 1) % phrases.length;
     renderPhrase(phrases[phraseIndex]);
   }, 2600);
+
+  window.addEventListener('resize', updatePhrase);
 </script>
 
 </body>
