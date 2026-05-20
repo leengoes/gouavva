@@ -72,38 +72,44 @@
 
   /* CURSOR EFFECT */
 
-  .cursor-dot,
-  .cursor-ring {
-    position: fixed;
-    left: -100px;
-    top: -100px;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
+ /* CURSOR EFFECT — black ring + blue dot */
 
-  .cursor-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 999px;
-    background: var(--blue);
-  }
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
 
-  .cursor-ring {
-    width: 34px;
-    height: 34px;
-    border: 1.5px solid var(--ink);
-    border-radius: 999px;
-    mix-blend-mode: difference;
-    transition: width .25s ease, height .25s ease, border-color .25s ease, background .25s ease;
-  }
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--blue);
+}
 
-  body.cursor-hover .cursor-ring {
-    width: 56px;
-    height: 56px;
-    border-color: var(--blue);
-    background: rgba(20, 105, 250, .08);
-  }
+.cursor-ring {
+  width: 54px;
+  height: 54px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  transition:
+    width .22s ease,
+    height .22s ease,
+    border-color .22s ease,
+    background .22s ease;
+}
+
+body.cursor-hover .cursor-ring {
+  width: 70px;
+  height: 70px;
+  border-color: var(--ink);
+  background: rgba(0, 0, 0, .035);
+}
 
   /* NAV */
 
