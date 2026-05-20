@@ -443,6 +443,93 @@
     transform: translateY(-2px);
   }
 
+  .beyond-section {
+    padding: 72px 0 78px;
+  }
+
+  .beyond-inner {
+    display: grid;
+    grid-template-columns: .9fr 1.4fr;
+    gap: 72px;
+    align-items: start;
+    padding-top: 72px;
+  }
+
+  .beyond-label {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  .beyond-title {
+    max-width: 520px;
+    font-size: clamp(40px, 4vw, 64px);
+    font-weight: 900;
+    line-height: 1.04;
+    letter-spacing: -2px;
+    color: var(--ink);
+  }
+
+  .beyond-text {
+    max-width: 520px;
+    margin-top: 26px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .beyond-card {
+    min-height: 260px;
+    padding: 30px 26px;
+    border: 1px solid var(--ghost);
+    background: var(--white);
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+
+  .beyond-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue);
+    background: var(--light);
+  }
+
+  .beyond-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  .beyond-card h3 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -.4px;
+    color: var(--ink);
+  }
+
+  .beyond-card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
   .stats-section {
     padding: 0 0 48px;
     margin-top: 0;
@@ -508,7 +595,7 @@
 
   .how-header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .9fr 1.1fr;
     gap: 80px;
     align-items: start;
     margin-bottom: 72px;
@@ -518,14 +605,15 @@
     font-size: clamp(44px, 4vw, 64px);
     font-weight: 900;
     line-height: 1.08;
+    letter-spacing: -1.5px;
   }
 
   .how-sub {
     padding-top: 12px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     color: var(--mid);
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
   .steps-grid {
@@ -537,11 +625,12 @@
   .step {
     padding: 40px 36px 40px 0;
     border-top: 2px solid var(--ghost);
-    transition: border-color .25s;
+    transition: border-color .25s, transform .25s;
   }
 
   .step:hover {
     border-top-color: var(--blue);
+    transform: translateY(-4px);
   }
 
   .step-num {
@@ -555,9 +644,10 @@
 
   .step-title {
     margin-bottom: 16px;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 22px;
+    font-weight: 900;
     color: var(--ink);
+    letter-spacing: -.5px;
   }
 
   .step-body {
@@ -660,6 +750,19 @@
     .project-url {
       justify-self: start;
       margin-left: 18px;
+    }
+
+    .beyond-inner {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .beyond-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .beyond-card {
+      min-height: auto;
     }
 
     .stats-grid {
@@ -794,6 +897,14 @@
       padding: 0 38px;
       font-size: 12px;
       letter-spacing: 4px;
+    }
+
+    .beyond-section {
+      padding: 54px 0 58px;
+    }
+
+    .beyond-inner {
+      padding-top: 48px;
     }
   }
 </style>
@@ -933,6 +1044,43 @@
   </div>
 </section>
 
+<section class="beyond-section">
+  <div class="section-wrap">
+    <hr class="section-divider">
+
+    <div class="beyond-inner reveal">
+      <div class="beyond-copy">
+        <span class="beyond-label">Beyond websites</span>
+        <h2 class="beyond-title">Bots, AI tools, and smart automations.</h2>
+        <p class="beyond-text">
+          We also build Telegram bots, AI chatbots, internal tools, and lightweight automations
+          that help businesses answer faster, sell smarter, and reduce repetitive work.
+        </p>
+      </div>
+
+      <div class="beyond-grid">
+        <div class="beyond-card reveal">
+          <span class="beyond-icon">✦</span>
+          <h3>Telegram bots</h3>
+          <p>Ordering flows, booking systems, support bots, notifications, and community tools.</p>
+        </div>
+
+        <div class="beyond-card reveal" style="transition-delay:.1s">
+          <span class="beyond-icon">⌁</span>
+          <h3>AI chatbots</h3>
+          <p>Custom assistants for customer support, lead capture, FAQs, and product guidance.</p>
+        </div>
+
+        <div class="beyond-card reveal" style="transition-delay:.2s">
+          <span class="beyond-icon">↯</span>
+          <h3>Automation tools</h3>
+          <p>Small systems that connect forms, messages, databases, payments, and daily workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="stats-section">
   <div class="section-wrap">
     <hr class="section-divider">
@@ -966,36 +1114,39 @@
 <section class="how-section" id="process">
   <div class="section-wrap">
     <div class="how-header">
-      <h2 class="how-h2 reveal">From idea<br>to launch.</h2>
+      <h2 class="how-h2 reveal">How we<br>actually work.</h2>
 
       <p class="how-sub reveal" style="transition-delay:.1s">
-        GOUAVVA turns early ideas into polished websites, landing pages, and digital products.
-        We move quickly, keep the process clear, and deliver clean work that is ready to launch.
+        We keep the process lean, direct, and focused on launch. No slow agency rituals, no endless calls,
+        no confusing paperwork — just clear decisions, clean design, and fast execution.
       </p>
     </div>
 
     <div class="steps-grid">
       <div class="step reveal">
         <span class="step-num">01</span>
-        <h3 class="step-title">Scope in a day</h3>
+        <h3 class="step-title">Lean pricing, serious output</h3>
         <p class="step-body">
-          Send us a brief. We turn it into a precise scope — timeline, deliverables, and price.
+          You do not pay for unnecessary layers, oversized meetings, or agency theater.
+          We keep the team focused, the scope clear, and the result polished.
         </p>
       </div>
 
       <div class="step reveal" style="transition-delay:.1s">
         <span class="step-num">02</span>
-        <h3 class="step-title">Ship in weeks</h3>
+        <h3 class="step-title">Less talking, more building</h3>
         <p class="step-body">
-          Tight, visible sprints. You see real progress every few days.
+          We skip boring Zoom marathons and overcomplicated documents.
+          You send the brief, we shape the direction, then show real progress fast.
         </p>
       </div>
 
       <div class="step reveal" style="transition-delay:.2s">
         <span class="step-num">03</span>
-        <h3 class="step-title">Code you own</h3>
+        <h3 class="step-title">Founder energy, clean execution</h3>
         <p class="step-body">
-          Clean architecture, clear handoff, and no unnecessary lock-in.
+          GOUAVVA is a young, ambitious technical team with high standards.
+          We move quickly, care about details, and build like the project matters.
         </p>
       </div>
     </div>
