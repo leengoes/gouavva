@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- GOUAVVA INDEX — v2026-05-20-CLEAN-MOBILE-GAP-FIX -->
+<!-- GOUAVVA INDEX — v2026-05-20-FINAL-ALIGNMENT-FIX -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GOUAVVA — Digital Product Studio</title>
@@ -143,7 +143,8 @@
 
   .airport-text {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     color: var(--blue);
     font-size: clamp(52px, 7vw, 104px);
     font-weight: 900;
@@ -192,7 +193,7 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    padding-bottom: 54px;
+    padding-bottom: 34px;
   }
 
   .btn-primary {
@@ -245,7 +246,7 @@
   }
 
   .marquee-item {
-    padding: 0 72px;
+    padding: 0 82px;
     border-right: 1px solid rgba(255,255,255,.22);
     color: #fff;
     font-size: 13px;
@@ -484,22 +485,22 @@
   }
 
   .standards-inner {
-    padding: 78px 0;
+    padding: 84px 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     display: grid;
     grid-template-columns: .9fr 1.4fr;
-    gap: 82px;
+    gap: 96px;
   }
 
   .standards-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 26px;
   }
 
   .standard-card {
-    padding: 32px 28px;
+    padding: 36px 30px;
     background: var(--light);
     border: 1px solid var(--line);
   }
@@ -573,7 +574,7 @@
   /* HOW */
 
   .how-section {
-    padding: 78px 0 104px;
+    padding: 64px 0 104px;
   }
 
   .how-header {
@@ -581,7 +582,7 @@
     grid-template-columns: .9fr 1.1fr;
     gap: 80px;
     align-items: start;
-    margin-bottom: 78px;
+    margin-bottom: 52px;
   }
 
   .how-h2 {
@@ -602,11 +603,11 @@
   .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 64px;
+    gap: 86px;
   }
 
   .step {
-    padding: 44px 18px 44px 0;
+    padding: 46px 22px 46px 0;
     border-top: 2px solid var(--line);
     transition: .25s ease;
   }
@@ -627,10 +628,10 @@
 
   .step-title {
     margin-bottom: 18px;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 900;
     letter-spacing: -.5px;
-    line-height: 1.2;
+    line-height: 1.18;
     white-space: nowrap;
   }
 
@@ -754,7 +755,7 @@
   @media (max-width: 900px) {
     nav {
       height: 76px;
-      padding: 0 26px;
+      padding: 0 28px;
     }
 
     .nav-links {
@@ -772,11 +773,11 @@
 
     .container,
     .section-wrap {
-      padding: 0 28px;
+      padding: 0 30px;
     }
 
     .hero {
-      padding: 122px 0 0;
+      padding: 118px 0 0;
     }
 
     .hero-eyebrow {
@@ -786,21 +787,21 @@
     }
 
     .hero-title {
-      font-size: clamp(42px, 11.4vw, 54px);
-      line-height: 1.03;
-      letter-spacing: -1.8px;
+      font-size: clamp(39px, 10.8vw, 50px);
+      line-height: 1.04;
+      letter-spacing: -1.5px;
     }
 
     .airport-text {
       flex-wrap: nowrap;
       white-space: nowrap;
-      font-size: clamp(38px, 10vw, 46px);
-      line-height: 1.06;
-      letter-spacing: -1.4px;
+      font-size: clamp(31px, 8.6vw, 38px);
+      line-height: 1.08;
+      letter-spacing: -0.9px;
     }
 
     .hero-dynamic {
-      min-height: 52px;
+      min-height: 44px;
       margin-top: 16px;
       align-items: center;
       overflow: hidden;
@@ -811,22 +812,22 @@
     }
 
     .hero-sub {
-      margin: 34px 0 38px;
       max-width: 100%;
-      font-size: 17px;
-      line-height: 1.76;
+      margin: 32px 0 36px;
+      font-size: 16.5px;
+      line-height: 1.7;
     }
 
     .hero-actions {
       flex-direction: column;
       align-items: stretch;
-      gap: 26px;
-      padding-bottom: 44px;
+      gap: 24px;
+      padding-bottom: 34px;
     }
 
     .btn-primary {
       width: 100%;
-      height: 62px;
+      height: 60px;
     }
 
     .btn-ghost {
@@ -834,14 +835,13 @@
     }
 
     .marquee-wrap {
-      margin-top: 0;
-      height: 78px;
+      height: 76px;
     }
 
     .marquee-item {
-      padding: 0 52px;
-      font-size: 12px;
-      letter-spacing: 4px;
+      padding: 0 54px;
+      font-size: 11px;
+      letter-spacing: 3.5px;
     }
 
     .work-section {
@@ -849,7 +849,7 @@
     }
 
     .section-label {
-      padding: 30px 0 34px;
+      padding: 28px 0 30px;
       gap: 24px;
     }
 
@@ -859,8 +859,8 @@
 
     .project-row {
       grid-template-columns: 1fr;
-      padding: 48px 0;
-      gap: 28px;
+      padding: 46px 0;
+      gap: 26px;
     }
 
     .project-row::before {
@@ -895,7 +895,7 @@
 
     .beyond-inner {
       padding-top: 58px;
-      gap: 48px;
+      gap: 46px;
     }
 
     .beyond-title,
@@ -907,7 +907,7 @@
     .beyond-grid,
     .standards-list,
     .steps-grid {
-      gap: 28px;
+      gap: 38px;
     }
 
     .beyond-card,
@@ -943,30 +943,31 @@
     }
 
     .how-section {
-      padding: 76px 0 96px;
+      padding: 68px 0 96px;
     }
 
     .how-header {
       gap: 38px;
-      margin-bottom: 62px;
+      margin-bottom: 42px;
     }
 
     .steps-grid {
-      gap: 34px;
+      gap: 38px;
     }
 
     .step {
-      padding: 42px 12px 42px 0;
+      padding: 42px 0;
     }
 
     .step-title {
       white-space: normal;
       font-size: 22px;
+      line-height: 1.2;
     }
 
     .cta-strip,
     footer {
-      padding: 52px 28px;
+      padding: 52px 30px;
       flex-direction: column;
       align-items: flex-start;
     }
@@ -980,17 +981,15 @@
     }
 
     .hero-title {
-      font-size: clamp(40px, 11.6vw, 52px);
-      letter-spacing: -1.6px;
+      font-size: clamp(38px, 10.8vw, 48px);
     }
 
     .airport-text {
-      font-size: clamp(34px, 9.6vw, 42px);
-      letter-spacing: -1.1px;
+      font-size: clamp(30px, 8.3vw, 36px);
     }
 
     .hero-dynamic {
-      min-height: 48px;
+      min-height: 42px;
     }
 
     .hero-sub {
@@ -1304,26 +1303,17 @@
 </footer>
 
 <script>
-  const desktopPhrases = [
-    'that launch fast.',
-    'that sell clearly.',
-    'that scale cleanly.',
-    'that feel sharp.'
-  ];
-
-  const mobilePhrases = [
-    'mobile-first.',
-    'SEO-ready.',
+  const phrases = [
     'launch fast.',
-    'feel sharp.'
+    'sell clearly.',
+    'scale cleanly.',
+    'feel sharp.',
+    'SEO-ready.',
+    'mobile-first.'
   ];
 
   const target = document.getElementById('airportText');
   let phraseIndex = 0;
-
-  function getPhrases() {
-    return window.innerWidth <= 900 ? mobilePhrases : desktopPhrases;
-  }
 
   function renderPhrase(text) {
     target.innerHTML = '';
@@ -1344,21 +1334,12 @@
     });
   }
 
-  function updatePhrase() {
-    const phrases = getPhrases();
-    phraseIndex = phraseIndex % phrases.length;
-    renderPhrase(phrases[phraseIndex]);
-  }
-
-  updatePhrase();
+  renderPhrase(phrases[phraseIndex]);
 
   setInterval(() => {
-    const phrases = getPhrases();
     phraseIndex = (phraseIndex + 1) % phrases.length;
     renderPhrase(phrases[phraseIndex]);
   }, 2600);
-
-  window.addEventListener('resize', updatePhrase);
 </script>
 
 </body>
